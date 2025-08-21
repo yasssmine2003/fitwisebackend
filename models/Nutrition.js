@@ -1,5 +1,4 @@
-// src/models/Nutrition.js
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const mealItemSchema = new mongoose.Schema({
   foodName: String,
@@ -23,5 +22,5 @@ const dailyNutritionSchema = new mongoose.Schema({
   meals: [mealSchema],
 });
 
-export default mongoose.model("DailyNutritionLog", dailyNutritionSchema);
+module.exports = mongoose.model("DailyNutritionLog", dailyNutritionSchema);
 
