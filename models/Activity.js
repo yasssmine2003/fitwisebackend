@@ -1,13 +1,12 @@
-// src/models/Activity.js
-import mongoose from "mongoose";
 
+const mongoose = require("mongoose");
 const activitySchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  type: String,
+  type_activite: String,
   dureeMin: Number,
-  calories: Number,
+  calories_burned: Number,
   date: { type: Date, default: Date.now },
 });
 
-export default mongoose.model("Activity", activitySchema);
+module.exports= mongoose.model("Activity", activitySchema);
 

@@ -12,6 +12,7 @@ const{connecttoMongoDB}= require("./config/db")
 //routage
 var indexRouter = require('./routes/index');
 const usersRoutes = require('./routes/users');
+const activityroute=require('./routes/activite')
 
 
 
@@ -30,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRoutes);
-//app.use('/os', osRouter);
+app.use('/activite',activityroute)
 
 
 // catch 404 and forward to error handler
