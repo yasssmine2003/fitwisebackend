@@ -1,6 +1,5 @@
 
-import mongoose from "mongoose";
-
+const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   passwordHash: { type: String, required: true },
@@ -24,6 +23,5 @@ const userSchema = new mongoose.Schema({
     objectif: { type: String, enum: ["Perte", "Maintien", "Prise"] },
   },
 });
-
-export default mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", userSchema);
 
