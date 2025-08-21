@@ -9,8 +9,14 @@ const http=require('http')
 require ('dotenv').config()
 const{connecttoMongoDB}= require("./config/db")
 
-
+//routage
 var indexRouter = require('./routes/index');
+const usersRoutes = require('./routes/users');
+
+
+
+
+
 
 var app = express();
 
@@ -22,9 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRoutes);
 //app.use('/os', osRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
