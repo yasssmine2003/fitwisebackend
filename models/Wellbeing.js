@@ -1,6 +1,5 @@
 
-import mongoose from "mongoose";
-
+const mongoose = require("mongoose");
 const wellbeingSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   date: { type: Date, default: Date.now },
@@ -11,5 +10,5 @@ const wellbeingSchema = new mongoose.Schema({
   notes: String,
 });
 
-export default mongoose.model("Wellbeing", wellbeingSchema);
+module.exports=mongoose.model("Wellbeing", wellbeingSchema);
 

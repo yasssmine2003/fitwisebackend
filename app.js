@@ -14,6 +14,7 @@ var indexRouter = require('./routes/index');
 const usersRoutes = require('./routes/users');
 const activityroute=require('./routes/activite')
 const nutritionroute=require('./routes/nutrition')
+const wellbeingroute=require('./routes/well')
 
 
 
@@ -34,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRoutes);
 app.use('/activite',activityroute)
 app.use('/nutrition',nutritionroute)
+app.use('/well',wellbeingroute),
 
 
 // catch 404 and forward to error handler
